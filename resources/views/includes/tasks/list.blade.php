@@ -20,7 +20,7 @@
                             {{ date('H:i a, d-m-Y', strtotime($task->end_time)) }}
                         </span>
                         <br/><br/>
-                        <a href="#"
+                        <a href="{{ route('task.edit', ['id' => $task->id]) }}"
                             class="btn btn-info">Edit</a>
                         <a href="{{route('task.delete',['id'=>$task->id])}}"
                            class="btn btn-danger">Delete</a>

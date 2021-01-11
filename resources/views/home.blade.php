@@ -5,9 +5,11 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
-                    <div class="card-header">{{ __('Dashboard') }}</div>
+                    <div class="card-header">
+                        <h1>Tasks</h1><span class="text-danger" ><i>Closed to Deadline</i></span>
+                    </div>
                     <div class="card-body">
-                        <div> <h1>Recent Tasks: </h1></div>
+
 
                         @include('includes.tasks.list')
 

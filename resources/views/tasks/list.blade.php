@@ -6,7 +6,9 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">
-                        <p class="float-left">{{ __('Task List') }}</p>
+                        <div class="float-left">
+                        <h1>Tasks</h1><span class="text-info" ><i>All tasks</i></span>
+                        </div>
                         <a class="float-right" href="{{ route('task.create') }}"><span><strong><h1>+</h1></strong></span></a>
                     </div>
 
