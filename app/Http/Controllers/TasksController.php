@@ -36,13 +36,22 @@ class TasksController extends Controller
         ]);
         $savedTask = $this->tasksRepository->createTask($request->except('_token'));
         if ($savedTask) {
-            //return redirect(route('task.all'));
-            return redirect(route('task.list'));
+            return redirect(route('task.all'));
         } else {
             return view('404');
         }
 
     }
+
+    public function delete($id)
+    {
+        $this->tasksRepository->checkIfAuthorized($id);
+        $this->tasksRepository->deleteTaskById($id);
+        return redirect()->back();
+    }
+
+
+
 
 
 }

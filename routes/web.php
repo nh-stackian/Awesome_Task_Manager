@@ -27,7 +27,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::prefix('/tasks')->group(function(){
 
     Route::get('/',[App\Http\Controllers\TasksController::class,'list'])
-    ->name('task.list');
+    ->name('task.all');
 
     Route::get('/create',[App\Http\Controllers\TasksController::class,'create'])
     ->name('task.create');
@@ -35,6 +35,8 @@ Route::prefix('/tasks')->group(function(){
     Route::post('/create',[App\Http\Controllers\TasksController::class,'save'])
     ->name('task.save');
 
+    Route::get('/{id}/delete', [App\Http\Controllers\TasksController::class, 'delete'])
+    ->name('task.delete');
 
 
 });

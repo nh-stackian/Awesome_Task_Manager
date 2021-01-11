@@ -57,6 +57,24 @@ class TasksRepository {
         return $task;
     }
 
+    public function getTaskById($id)
+    {
+        return Task::findOrFail($id);
+    }
+
+    public function deleteTaskById($id)
+    {
+        return $this->getTaskById($id)->delete();
+    }
+
+    public function checkIfAuthorized($id)
+    {
+        $task = Task::where("id", $id)->first();
+        if ($task->user_id !== Auth::id()) {
+            throw new \Exception("You do not have access to modify this task");
+        }
+    }
+
 
 
 }

@@ -7,7 +7,7 @@
                 <div class="card">
                     <div class="card-header">
                         <p class="float-left">{{ __('Task List') }}</p>
-                        <a class="float-right" href="{{ route('task.create') }}">+</a>
+                        <a class="float-right" href="{{ route('task.create') }}"><span><strong><h1>+</h1></strong></span></a>
                     </div>
 
                     <div class="card-body">
